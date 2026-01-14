@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYAT THADAR LINN | Portfolio</title>
     <style>
-        :root { --dark: #1a1a1a; --light: #ffffff; --accent: #007bff; }
+        :root { --dark: #1a1a1a; --light: #ffffff; --accent: #007bff; --success: #28a745; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: auto; padding: 20px; background: #f8f9fa; }
         .hero { display: flex; align-items: center; gap: 40px; background: var(--dark); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; }
         .hero img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--accent); object-fit: cover; }
         .section { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h2 { color: var(--accent); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--accent); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
         .project-card { border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .btn { display: inline-block; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; margin-right: 10px; transition: 0.3s; }
+        .btn-dark { background: #333; color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 20px; }
         @media (max-width: 600px) { .hero { flex-direction: column; text-align: center; } }
     </style>
 </head>
@@ -22,51 +25,64 @@
     <div class="hero">
         <img src="https://github.com/ImDiki.png" alt="MYAT THADAR LINN">
         <div>
-            <h1>MYAT THADAR LINN</h1>
-            <p><strong>CS Student at OIC | Aspiring Full-stack Engineer</strong></p>
-            <p>📍 Osaka, Japan</p>
-            <a href="https://github.com/ImDiki" class="btn" style="background: #333;">GitHub Profile</a>
-        
-     <a href="MYAT THADAR LINN_Resume.pdf" class="btn" target="_blank" style="background: #28a745;">Download Resume</a>
+            <h1 style="margin:0">MYAT THADAR LINN</h1>
+            <p style="font-size: 1.2em; color: #aaa; margin: 5px 0;">Aspiring Full-stack Engineer</p>
+            <p>🇲🇲 Nationality: Myanmar | 📍 Osaka, Japan</p>
+            <a href="https://github.com/ImDiki" class="btn btn-dark">GitHub</a>
+            <a href="MYAT THADAR LINN_Resume.pdf" class="btn btn-success" target="_blank">Download Resume</a>
         </div>
     </div>
 
     <div class="section">
         <h2>About Me</h2>
-        <p>Currently studying Computer Science Engineering at **Osaka Information and Computer Science College (OIC)**. I am a dedicated learner focused on mastering backend technologies like Java and .NET while preparing for the **FE (Fundamental IT Engineer) Exam** and **JLPT N1**.</p>
+        <p>I am a Computer Science Engineering student at <strong>OIC</strong> with a strong foundation in backend development. I am passionate about building scalable applications and am currently preparing for the <strong>FE Exam</strong> and <strong>JLPT N1</strong> to excel in the Japanese IT industry.</p>
+    </div>
+
+    <div class="section">
+        <h2>Education & Experience</h2>
+        <div class="project-card" style="border-left-color: #ffc107;">
+            <p style="margin: 0; color: #666;"><strong>Apr 2025 - Present</strong></p>
+            <h3>Osaka Information and Computer Science College (OIC)</h3>
+            <p>CS Engineering Course (Advanced). Preparing for FE Exam & KUAS University transfer.</p>
+        </div>
+        <div class="project-card">
+            <p style="margin: 0; color: #666;"><strong>2023 - 2025</strong></p>
+            <h3>Japanese Language School (Japan)</h3>
+            <p>Academic Japanese Proficiency.</p>
+        </div>
+        <div class="project-card" style="border-left-color: var(--success);">
+            <p style="margin: 0; color: #666;"><strong>2020 - 2023</strong></p>
+            <h3>Self-Directed Learning & Projects</h3>
+            <p>Mastered Java, Spring Boot, and Angular while self-studying Japanese.</p>
+        </div>
+        <div class="project-card">
+            <p style="margin: 0; color: #666;"><strong>2018 - 2019</strong></p>
+            <h3>Matriculation Exam (Myanmar)</h3>
+            <p>Science Stream Completion.</p>
+        </div>
     </div>
 
     <div class="section">
         <h2>Technical Skills</h2>
         <div class="skills-grid">
-            <div>
-                <strong>Backend:</strong><br>
-                Java, C#, .NET, SQL
-            </div>
-            <div>
-                <strong>Frontend:</strong><br>
-                HTML, CSS, Angular
-            </div>
-            <div>
-                <strong>Languages:</strong><br>
-                Japanese (N1 Candidate), English (IELTS), Burmese
-            </div>
+            <div><strong>Backend:</strong><br>Java, C#, .NET, SQL, Spring Boot</div>
+            <div><strong>Frontend:</strong><br>HTML, CSS, JavaScript, Angular</div>
+            <div><strong>Languages:</strong><br>Japanese (N1 Candidate), English (IELTS 5.5), Burmese</div>
         </div>
     </div>
 
     <div class="section">
-        <h2>Main Projects</h2>
-        <div class="project-card">
-            <h3>Student Attendance System</h3>
-            <p>A robust system developed using C# and .NET to manage student records and attendance efficiently.</p>
-            <a href="https://github.com/ImDiki/Student_Attendance_System" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>FE-Algorithm-Study</h3>
-            <p>Deep dive into binary search and core algorithms as part of the Fundamental IT Engineer Exam preparation.</p>
-            <a href="https://github.com/ImDiki/FE-Algorithm-Study" target="_blank">View on GitHub</a>
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <div>📧 <strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></div>
+            <div>🔗 <strong>LinkedIn:</strong> <a href="#">Your Profile</a></div>
+            <div>💻 <strong>GitHub:</strong> <a href="https://github.com/ImDiki">ImDiki</a></div>
         </div>
     </div>
+
+    <footer style="text-align: center; color: #888; margin: 40px 0;">
+        <p>© 2026 Myat Thadar Linn. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
