@@ -3,188 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYAT THADAR LINN | Portfolio</title>
+    <title>DIKI | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
     <style>
-        /* Theme Variables */
-        :root { 
-            --bg: #f8f9fa; --card-bg: #ffffff; --text: #333; 
-            --accent: #007bff; --success: #28a745; --hero-bg: #1a1a1a;
-            --jp-red: #bc002d;
-        }
-        [data-theme="dark"] {
-            --bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; 
-            --accent: #3793ff; --hero-bg: #000000;
-        }
-
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: var(--text); max-width: 950px; margin: auto; padding: 20px; background: var(--bg); transition: 0.3s; }
-        
-        /* Floating Controls - Sticky to top */
-        .controls { 
-            position: sticky; 
-            top: 10px; 
-            display: flex; 
-            justify-content: flex-end; 
-            gap: 10px; 
-            z-index: 1000; 
-            margin-bottom: 20px;
-        }
-        .control-btn { padding: 8px 15px; border-radius: 20px; border: none; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.2s; }
-        .btn-lang { background: var(--jp-red); color: white; }
-        .btn-theme { background: #555; color: white; }
-
-        .hero { display: flex; align-items: center; gap: 40px; background: var(--hero-bg); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; }
-        .hero img { width: 170px; height: 170px; border-radius: 50%; border: 4px solid var(--accent); object-fit: cover; }
-        
-        .section { background: var(--card-bg); padding: 25px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h2 { color: var(--accent); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .project-card { border-left: 5px solid var(--accent); padding: 15px; background: var(--bg); border-radius: 0 8px 8px 0; margin-bottom: 15px; }
-        
-        .btn { display: inline-block; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; margin-right: 10px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-dark { background: #333; color: white; }
-        .btn-success { background: var(--success); color: white; }
-        
-        /* Language Visibility Classes */
-        .lang-jp { display: none; }
-
-        @media (max-width: 600px) { 
-            .hero { flex-direction: column; text-align: center; } 
-            .controls { justify-content: center; position: sticky; top: 0; padding: 10px 0; background: var(--bg); }
-        }
+        body { font-family: 'Inter', sans-serif; background: #0F172A; color: white; overflow-x: hidden; }
+        .glass { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+        .btn-toggle { transition: 0.3s; background: rgba(6, 182, 212, 0.2); border: 1px solid #06B6D4; }
+        .btn-toggle:hover { background: #06B6D4; color: #0F172A; }
+        [lang="jp"] { display: none; } /* Default hide Japanese */
     </style>
 </head>
-<body data-theme="light">
+<body class="p-4 md:p-10">
 
-    <div class="controls">
-        <button class="control-btn btn-lang" onclick="toggleLang()" id="langBtn">日本語 JP</button>
-        <button class="control-btn btn-theme" onclick="toggleTheme()">Theme</button>
+    <div class="fixed top-6 right-6 z-50 flex gap-2">
+        <button onclick="switchLang('en')" class="btn-toggle px-4 py-1 rounded-full text-xs font-bold uppercase">EN</button>
+        <button onclick="switchLang('jp')" class="btn-toggle px-4 py-1 rounded-full text-xs font-bold uppercase">JP</button>
     </div>
 
-    <div class="hero">
-        <img src="https://github.com/ImDiki.png" alt="MYAT THADAR LINN">
-        <div>
-            <h1 style="margin:0">MYAT THADAR LINN</h1>
-            <p class="lang-en" style="font-size: 1.1em; color: #aaa;">Aspiring Full-stack Developer</p>
-            <p class="lang-jp" style="font-size: 1.1em; color: #aaa;">フルスタックエンジニアを目指しています</p>
-            <p>🇲🇲 Myanmar | 📍 Osaka, Japan</p>
-            <a href="https://github.com/ImDiki" class="btn btn-dark">GitHub</a>
-            <a href="MYAT THADAR LINN_Resume.pdf" class="btn btn-success" target="_blank">Resume (PDF)</a>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">About Me</h2>
-        <h2 class="lang-jp">自己紹介</h2>
-        <p class="lang-en">I am a Computer Science Engineering student at <strong>Osaka Information & Computer College</strong> with a strong foundation in backend development. Preparing for <strong>FE Exam</strong> and <strong>JLPT N1</strong>.</p>
-        <p class="lang-jp">大阪情報コンピュータ専門学校 (OIC) でシステムエンジニアリングを専攻しています。バックエンド開発に自信があり、現在は<strong>基本情報技術者試験 (FE)</strong> と <strong>JLPT N1</strong> の合格を目指して勉強中です。</p>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">Education & Experience</h2>
-        <h2 class="lang-jp">学歴・経験</h2>
+    <div class="max-w-5xl mx-auto space-y-8">
         
-        <div class="project-card" style="border-left-color: #ffc107;">
-            <p style="margin: 0; color: #666;"><strong>Apr 2025 - Present</strong></p>
-            <h3>Osaka Information and Computer Science College (OIC)</h3>
-            <p class="lang-en">System Engineering / Advanced IT Course</p>
-            <p class="lang-jp">システムエンジニア専攻 / 高度情報処理学科</p>
-        </div>
-
-        <div class="project-card">
-            <p style="margin: 0; color: #666;"><strong>2023 - 2025</strong></p>
-            <h3>Japanese Language School (JPGA)</h3>
-            <p class="lang-en">Academic Japanese Proficiency (N5-N2)</p>
-            <p class="lang-jp">日本語学科 (N5からN2まで取得)</p>
-        </div>
-
-        <div class="project-card" style="border-left-color: var(--success);">
-            <p style="margin: 0; color: #666;"><strong>2020 - 2023</strong></p>
-            <h3 class="lang-en">Self-Directed Learning & Projects</h3>
-            <h3 class="lang-jp">独学・個人プロジェクト</h3>
-            <p class="lang-en">Mastered Java, Spring Boot, and Angular while self-studying Japanese.</p>
-            <p class="lang-jp">ミャンマーで日本語を独学しながら、Java、Spring Boot、Angular などの技術を習得しました。</p>
-        </div>
-
-        <div class="project-card">
-            <p style="margin: 0; color: #666;"><strong>2018 - 2019</strong></p>
-            <h3>Matriculation Exam (Myanmar)</h3>
-            <p class="lang-en">Passed with Science Stream</p>
-            <p class="lang-jp">ミャンマー高校卒業試験 合格 (理系)</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">Projects</h2>
-        <h2 class="lang-jp">プロジェクト</h2>
-        <div class="grid">
-            <div class="project-card">
-                <h3>Student Attendance App</h3>
-                <p>C# / .NET / SQL</p>
-                <a href="https://github.com/ImDiki/Student_Attendance_App" target="_blank" style="color: var(--accent);">View Repo →</a>
+        <header class="glass rounded-[40px] p-10 flex flex-col md:flex-row items-center gap-10 glow-cyan">
+            <div class="relative">
+                <img src="/Assets/normal.png" class="w-44 h-44 rounded-full border-4 border-[#06B6D4]" alt="Myat Thadar Linn">
+                <div class="absolute inset-0 rounded-full animate-pulse border-2 border-[#06B6D4] opacity-50"></div>
             </div>
-            <div class="project-card" style="border-left-color: #f89820;">
-                <h3>FE-Algorithm-Study</h3>
-                <p>Java / Binary Search</p>
-                <a href="https://github.com/ImDiki/FE-Algorithm-Study" target="_blank" style="color: #f89820;">View Repo →</a>
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl font-extrabold tracking-tighter">MYAT THADAR LINN</h1>
+                <p class="text-[#06B6D4] text-xl font-bold mt-2 tracking-widest uppercase">
+                    <span lang="en">Aspiring Mobile Developer</span>
+                    <span lang="jp">モバイルアプリエンジニア志望</span>
+                </p>
+                <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
+                    <span class="bg-slate-800/80 px-4 py-1 rounded-lg text-sm border border-slate-700">🇲🇲 Myanmar</span>
+                    <span class="bg-slate-800/80 px-4 py-1 rounded-lg text-sm border border-slate-700">📍 Osaka, Japan</span>
+                    <a href="https://github.com/ImDiki" class="bg-white text-black font-bold px-8 py-2 rounded-full hover:bg-[#06B6D4] transition">GitHub</a>
+                </div>
             </div>
-            <div class="project-card" style="border-left-color: #68217a;">
-                <h3>Multilingual Calculator</h3>
-                <p>C# / Localization</p>
-                <a href="https://github.com/ImDiki/Multilingual-Calculator" target="_blank" style="color: #68217a;">View Repo →</a>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-6">
+                <section class="glass p-8 rounded-[30px]">
+                    <h2 class="text-[#06B6D4] font-bold text-xs uppercase mb-4 tracking-widest">About</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        <span lang="en">CSE student at OIC with a strong foundation in backend development. Preparing for FE Exam and JLPT N1.</span>
+                        <span lang="jp">大阪情報コンピュータ専門学校（OIC）の学生です。バックエンド開発の基礎を学び、現在はFE試験とJLPT N1合格を目指しています。</span>
+                    </p>
+                </section>
+
+                <section class="glass p-8 rounded-[30px]">
+                    <h2 class="text-[#06B6D4] font-bold text-xs uppercase mb-4 tracking-widest">Tech Stack</h2>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-bold">
+                        <span class="bg-[#512BD4] px-2 py-1 rounded text-white">C# .NET</span>
+                        <span class="bg-[#ED8B00] px-2 py-1 rounded text-white">JAVA</span>
+                        <span class="bg-[#DD0031] px-2 py-1 rounded text-white">ANGULAR</span>
+                        <span class="bg-[#06B6D4] px-2 py-1 rounded text-black">SQL</span>
+                    </div>
+                </section>
             </div>
-            <div class="project-card" style="border-left-color: var(--success);">
-                <h3>Accessibility Calculator</h3>
-                <p>C# / UI Accessibility</p>
-                <a href="https://github.com/ImDiki/Accessibility-Calculator" target="_blank" style="color: var(--success);">View Repo →</a>
+
+            <div class="md:col-span-2 space-y-6">
+                <section class="glass p-10 rounded-[40px]">
+                    <h2 class="text-2xl font-extrabold mb-8">
+                        <span lang="en">Experience</span><span lang="jp">経歴</span>
+                    </h2>
+                    <div class="space-y-10 border-l-2 border-slate-700 ml-2">
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#06B6D4] glow-cyan"></div>
+                            <h3 class="text-xl font-bold">OIC (Osaka Information & Computer)</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-medium italic">2025 - Present</p>
+                            <p class="text-slate-300 mt-2 text-sm">System Engineering / Advanced IT Course</p>
+                        </div>
+                        <div class="relative pl-8 opacity-60">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-500"></div>
+                            <h3 class="text-xl font-bold">Japanese Language School (JPGA)</h3>
+                            <p class="text-slate-400 text-sm mt-1">2023 - 2025</p>
+                            <p class="text-slate-300 mt-2 text-sm">N5 - N2 Academic Japanese Proficiency</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2 class="lang-en">Technical Skills</h2>
-        <h2 class="lang-jp">スキル</h2>
-        <div class="skills-grid">
-            <div><strong>Backend:</strong><br>Java, C#, .NET, SQL, Spring Boot</div>
-            <div><strong>Frontend:</strong><br>HTML, CSS, JavaScript, Angular</div>
-            <div><strong>Languages:</strong><br>Japanese (N1 Candidate), English (IELTS 5.5), Burmese</div>
-        </div>
+        <footer class="text-center py-20 opacity-30 text-xs font-mono">
+            BUILD_VERSION: 2.0.26 // USER: IMDIKI
+        </footer>
     </div>
-
-    <div class="section">
-        <h2 class="lang-en">Contact</h2>
-        <h2 class="lang-jp">連絡先</h2>
-        <div class="contact-info">
-            <p>📧 Email: <a href="mailto:your-email@example.com" style="color: var(--accent);">your-email@example.com</a></p>
-            <p>💻 GitHub: <a href="https://github.com/ImDiki" style="color: var(--accent);">ImDiki</a></p>
-        </div>
-    </div>
-
-    <footer style="text-align: center; color: #888; margin: 40px 0;">
-        <p>© 2026 Myat Thadar Linn. All rights reserved.</p>
-    </footer>
 
     <script>
-        let currentLang = 'en';
-        function toggleLang() {
-            currentLang = currentLang === 'en' ? 'jp' : 'en';
-            const enEls = document.querySelectorAll('.lang-en');
-            const jpEls = document.querySelectorAll('.lang-jp');
-            
-            if(currentLang === 'jp') {
-                enEls.forEach(el => el.style.display = 'none');
-                jpEls.forEach(el => el.style.display = 'block');
-                document.getElementById('langBtn').innerText = 'English US';
-            } else {
-                enEls.forEach(el => el.style.display = 'block');
-                jpEls.forEach(el => el.style.display = 'none');
-                document.getElementById('langBtn').innerText = '日本語 JP';
-            }
-        }
-
-        function toggleTheme() {
-            const body = document.body;
-            body.setAttribute('data-theme', body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        function switchLang(lang) {
+            document.querySelectorAll('[lang]').forEach(el => {
+                el.style.display = el.getAttribute('lang') === lang ? 'inline' : 'none';
+            });
+            document.documentElement.lang = lang;
         }
     </script>
 </body>
