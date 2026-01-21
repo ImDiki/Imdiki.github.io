@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIKI | Professional Portfolio</title>
+    <title>DIKI | Mobile & Full-stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script>
@@ -13,130 +13,161 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; transition: 0.3s; }
+        body { font-family: 'Inter', sans-serif; transition: 0.4s ease; }
         .glass { backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .dark .glass { background: rgba(30, 41, 59, 0.7); }
-        .light .glass { background: rgba(248, 250, 252, 0.9); border-color: rgba(0, 0, 0, 0.05); color: #1e293b; }
+        .dark .glass { background: rgba(30, 41, 59, 0.65); }
+        .light .glass { background: rgba(255, 255, 255, 0.9); border-color: rgba(0, 0, 0, 0.05); color: #1e293b; }
         [lang="jp"] { display: none; }
     </style>
 </head>
-<body class="dark:bg-[#0B1120] bg-slate-100 p-4 md:p-8 dark:text-white text-slate-900">
+<body class="dark:bg-[#0B1120] bg-slate-100 p-4 md:p-10 dark:text-white text-slate-900 leading-relaxed">
 
-    <nav class="fixed top-4 right-4 z-50 flex gap-2">
-        <button onclick="toggleTheme()" class="glass px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:scale-105 transition">
-            <span class="dark:hidden">🌙 Dark</span><span class="hidden dark:inline">☀️ Light</span>
+    <nav class="fixed top-6 right-6 z-50 flex gap-2">
+        <button onclick="toggleTheme()" class="glass px-5 py-2 rounded-full text-[10px] font-black uppercase shadow-lg hover:scale-110 transition">
+            <span class="dark:hidden">🌙 Mode</span><span class="hidden dark:inline">☀️ Mode</span>
         </button>
-        <button onclick="switchLang()" class="glass px-4 py-2 rounded-xl text-xs font-bold shadow-lg bg-cyanGlow/20 border-cyanGlow/50 hover:bg-cyanGlow transition">
+        <button onclick="switchLang()" class="glass px-5 py-2 rounded-full text-[10px] font-black uppercase shadow-lg bg-cyanGlow/20 border-cyanGlow/50 hover:bg-cyanGlow transition">
             JP / EN
         </button>
     </nav>
 
-    <div class="max-w-5xl mx-auto space-y-6">
+    <div class="max-w-6xl mx-auto space-y-8">
         
-        <header class="glass rounded-[32px] p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+        <header class="glass rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-2xl">
             <div class="relative">
-                <img src="https://github.com/ImDiki.png" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyanGlow shadow-[0_0_25px_#06B6D4]" alt="Diki">
+                <img src="https://github.com/ImDiki.png" class="w-32 h-32 md:w-44 md:h-44 rounded-full border-4 border-cyanGlow shadow-[0_0_30px_#06B6D4]" alt="Diki Profile">
                 <div class="absolute bottom-2 right-2 bg-green-500 w-6 h-6 rounded-full border-4 dark:border-[#1E293B] border-white"></div>
             </div>
             <div class="text-center md:text-left flex-1">
-                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">MYAT THADAR LINN <span class="text-cyanGlow">(DIKI)</span></h1>
-                <p class="text-base md:text-lg font-bold mt-2 opacity-80 uppercase tracking-widest text-cyanGlow">
-                    <span lang="en">Aspiring Mobile Developer | Full-stack Enthusiast</span>
-                    <span lang="jp">モバイルアプリエンジニア志望 | フルスタック志向</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tighter">MYAT THADAR LINN <span class="text-cyanGlow">(DIKI)</span></h1>
+                <p class="text-sm md:text-lg font-bold mt-2 text-cyanGlow tracking-widest uppercase">
+                    <span lang="en">Mobile Developer | Full-stack Enthusiast</span>
+                    <span lang="jp">モバイルアプリエンジニア | フルスタック志向</span>
                 </p>
                 <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
-                    <span class="glass px-4 py-1.5 rounded-lg text-xs font-semibold">🇲🇲 Myanmar</span>
-                    <span class="glass px-4 py-1.5 rounded-lg text-xs font-semibold">📍 Osaka, Japan</span>
-                    <a href="https://github.com/ImDiki" class="bg-cyanGlow text-white font-bold px-6 py-2 rounded-xl text-sm hover:opacity-90 transition">GITHUB</a>
+                    <span class="glass px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-tighter">🇲🇲 Myanmar National</span>
+                    <span class="glass px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-tighter">📍 Osaka, Japan</span>
+                    <a href="https://github.com/ImDiki" class="bg-cyanGlow text-white font-black px-8 py-2 rounded-xl text-xs hover:opacity-80 transition uppercase">Main Overview</a>
                 </div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div class="space-y-6">
-                <section class="glass p-6 rounded-[28px]">
-                    <h2 class="text-cyanGlow font-black text-xs uppercase mb-4 tracking-widest">Contact Info</h2>
-                    <ul class="text-sm space-y-3 font-medium opacity-90">
-                        <li class="flex items-center gap-3">📧 <a href="mailto:myat221018@gmail.com" class="hover:text-cyanGlow">myat221018@gmail.com</a></li>
-                        <li class="flex items-center gap-3">📞 <a href="tel:08084260408" class="hover:text-cyanGlow">080-8426-0408</a></li>
-                    </ul>
+                <section class="glass p-8 rounded-[35px]">
+                    <h2 class="text-cyanGlow font-black text-[10px] uppercase mb-6 tracking-widest border-b border-cyanGlow/20 pb-2">Contact Me</h2>
+                    <div class="space-y-4 text-xs font-medium">
+                        <div class="flex items-center gap-3">📧 <a href="mailto:myat221018@gmail.com" class="hover:text-cyanGlow transition">myat221018@gmail.com</a></div>
+                        <div class="flex items-center gap-3">📞 <a href="tel:08084260408" class="hover:text-cyanGlow transition">080-8426-0408</a></div>
+                        <div class="flex items-center gap-3">🔗 <a href="https://github.com/ImDiki" class="hover:text-cyanGlow transition">github.com/ImDiki</a></div>
+                    </div>
                 </section>
 
-                <section class="glass p-6 rounded-[28px]">
-                    <h2 class="text-cyanGlow font-black text-xs uppercase mb-4 tracking-widest">Technical Skills</h2>
-                    <div class="space-y-4 text-xs font-bold">
+                <section class="glass p-8 rounded-[35px]">
+                    <h2 class="text-cyanGlow font-black text-[10px] uppercase mb-6 tracking-widest border-b border-cyanGlow/20 pb-2">Technical Skills</h2>
+                    <div class="space-y-6 text-[11px] font-bold">
                         <div>
-                            <p class="mb-2 opacity-60">Mobile & Backend</p>
+                            <p class="opacity-50 mb-3 text-[10px] uppercase">Tech Stack</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-600 px-2 py-1 rounded">C# .NET</span>
-                                <span class="bg-orange-600 px-2 py-1 rounded">Java</span>
-                                <span class="bg-blue-600 px-2 py-1 rounded">Spring Boot</span>
+                                <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-lg border border-blue-600/30">C# .NET</span>
+                                <span class="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-lg border border-orange-600/30">Java</span>
+                                <span class="bg-red-600/20 text-red-400 px-3 py-1 rounded-lg border border-red-600/30">Angular</span>
                             </div>
                         </div>
                         <div>
-                            <p class="mb-2 opacity-60">Frontend</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-red-600 px-2 py-1 rounded">Angular</span>
-                                <span class="bg-yellow-600 px-2 py-1 rounded text-black">JS</span>
-                                <span class="bg-purple-600 px-2 py-1 rounded">Bootstrap</span>
+                            <p class="opacity-50 mb-3 text-[10px] uppercase">Certificates</p>
+                            <div class="space-y-2">
+                                <p class="flex items-center gap-2 text-green-400">✔️ JLPT N2 Passed</p>
+                                <p class="flex items-center gap-2 text-green-400">✔️ IELTS 5.5 Certified</p>
+                                <p class="flex items-center gap-2 text-cyanGlow italic">Preparing for FE Exam</p>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <div class="md:col-span-2 space-y-6">
-                <section class="glass p-8 rounded-[32px]">
-                    <h2 class="text-2xl font-black mb-8 flex items-center gap-3">
-                        <div class="w-2 h-6 bg-cyanGlow rounded-full"></div>
-                        <span lang="en">Education History</span><span lang="jp">学歴</span>
+            <div class="md:col-span-2 space-y-8">
+                
+                <section class="glass p-8 md:p-10 rounded-[40px]">
+                    <h2 class="text-2xl font-black mb-10 flex items-center gap-3 uppercase italic">
+                        <div class="w-1.5 h-6 bg-cyanGlow rounded-full"></div>
+                        <span lang="en">Education</span><span lang="jp">学歴</span>
                     </h2>
-                    <div class="space-y-8 border-l-2 border-slate-700/50 ml-2">
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-cyanGlow"></div>
-                            <h3 class="font-bold text-lg">OIC (Osaka Information & Computer)</h3>
-                            <p class="text-cyanGlow text-xs font-bold">Apr 2025 - Present</p>
-                            <p class="text-sm opacity-80 mt-1">System Engineering / Advanced IT Course</p>
+                    <div class="space-y-10 border-l-2 border-slate-700/50 ml-2">
+                        <div class="relative pl-8 group">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-cyanGlow shadow-[0_0_10px_#06B6D4]"></div>
+                            <h3 class="font-bold text-lg leading-tight group-hover:text-cyanGlow transition">Osaka Information and Computer Science College (OIC)</h3>
+                            <p class="text-xs font-black opacity-50 mt-1">2025 - Present | System Engineering / Advanced IT Course</p>
                         </div>
                         <div class="relative pl-8">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-500"></div>
-                            <h3 class="font-bold text-lg">Japanese Language School (JPGA)</h3>
-                            <p class="opacity-50 text-xs font-bold">Apr 2023 - Mar 2025</p>
-                            <p class="text-sm opacity-80 mt-1">Academic Japanese Proficiency (N2 Level)</p>
+                            <h3 class="font-bold text-base opacity-90">Japanese Language School (JPGA)</h3>
+                            <p class="text-[10px] opacity-50">Apr 2023 - Mar 2025</p>
                         </div>
                         <div class="relative pl-8">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-500"></div>
-                            <h3 class="font-bold text-lg">West Dagon University</h3>
-                            <p class="opacity-50 text-xs font-bold">Dec 2019 - Mar 2020</p>
+                            <h3 class="font-bold text-base opacity-90">West Dagon University (1st Year)</h3>
+                            <p class="text-[10px] opacity-50">Dec 2019 - Mar 2020</p>
                         </div>
-                        <div class="relative pl-8 opacity-50">
+                        <div class="relative pl-8 opacity-40">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-500"></div>
-                            <h3 class="font-bold text-lg">B.E.P.S (1) - Elementary Education</h3>
-                            <p class="text-xs font-bold">Jun 2008 - Jan 2013</p>
+                            <h3 class="font-bold text-sm">B.E.P.S (1) - Elementary Education</h3>
+                            <p class="text-[10px]">Jun 2008 - Jan 2013</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass p-8 md:p-10 rounded-[40px]">
+                    <h2 class="text-2xl font-black mb-8 flex items-center gap-3 uppercase italic">
+                        <div class="w-1.5 h-6 bg-orange-500 rounded-full"></div>
+                        <span lang="en">Work Experience</span><span lang="jp">職歴・アルバイト</span>
+                    </h2>
+                    <div class="grid grid-cols-1 gap-4 text-xs">
+                        <div class="glass p-5 rounded-2xl flex justify-between items-center border-l-4 border-orange-500">
+                            <div>
+                                <h4 class="font-black text-sm uppercase">U-NET 株式会社</h4>
+                                <p class="opacity-60 italic mt-1 font-semibold"><span lang="en">Telephone Operator</span><span lang="jp">電話オペレーター</span></p>
+                            </div>
+                            <span class="font-mono text-[10px] opacity-40">2025/11 - PRESENT</span>
+                        </div>
+                        <div class="p-5 flex justify-between items-center opacity-60">
+                            <div>
+                                <h4 class="font-bold text-sm">桜ことのは日本語学校</h4>
+                                <p class="text-[10px]">Student Support & Translation</p>
+                            </div>
+                            <span class="font-mono text-[10px]">2025/10</span>
                         </div>
                     </div>
                 </section>
 
                 <section class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="https://github.com/ImDiki/Student_Attendance_App" class="glass p-6 rounded-3xl hover:border-cyanGlow transition group">
-                        <h3 class="font-bold group-hover:text-cyanGlow">Student Attendance App</h3>
-                        <p class="text-[10px] mt-2 font-mono opacity-50">C# / .NET / SQL / GLASS UI</p>
+                    <a href="https://github.com/ImDiki/Student_Attendance_App" class="glass p-6 rounded-[30px] hover:border-cyanGlow transition group flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-black text-sm uppercase group-hover:text-cyanGlow transition tracking-tighter">Student Attendance App</h3>
+                            <p class="text-[9px] mt-2 font-mono opacity-50 tracking-widest uppercase">C# / .NET / SQL / Desktop UI</p>
+                        </div>
+                        <div class="mt-4 text-[10px] font-bold text-cyanGlow opacity-0 group-hover:opacity-100 transition">VIEW REPO →</div>
                     </a>
-                    <a href="https://github.com/ImDiki/Multilingual-Calculator" class="glass p-6 rounded-3xl hover:border-cyanGlow transition group">
-                        <h3 class="font-bold group-hover:text-cyanGlow">Multilingual Calculator</h3>
-                        <p class="text-[10px] mt-2 font-mono opacity-50">C# / LOCALIZATION / UI</p>
+                    <a href="https://github.com/ImDiki/Multilingual-Calculator" class="glass p-6 rounded-[30px] hover:border-cyanGlow transition group flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-black text-sm uppercase group-hover:text-cyanGlow transition tracking-tighter">Multilingual Calculator</h3>
+                            <p class="text-[9px] mt-2 font-mono opacity-50 tracking-widest uppercase">C# / Localization / Mobile Ready</p>
+                        </div>
+                        <div class="mt-4 text-[10px] font-bold text-cyanGlow opacity-0 group-hover:opacity-100 transition">VIEW REPO →</div>
                     </a>
                 </section>
+
             </div>
         </div>
 
-        <footer class="text-center py-12 opacity-20 text-[10px] font-mono tracking-widest">
-            &lt; IMDIKI_DEV_OSAKA / 2026 &gt;
+        <footer class="text-center py-16 opacity-20 text-[10px] font-mono tracking-widest">
+            &lt; IMDIKI_DEVELOPMENT_OSAKA_2026 /&gt;
         </footer>
     </div>
 
     <script>
+        // Language Toggle Logic
         function switchLang() {
             const current = document.documentElement.lang === 'en' ? 'jp' : 'en';
             document.documentElement.lang = current;
@@ -144,6 +175,7 @@
                 el.style.display = el.getAttribute('lang') === current ? 'inline' : 'none';
             });
         }
+        // Dark/Light Theme Logic
         function toggleTheme() {
             document.documentElement.classList.toggle('dark');
             document.documentElement.classList.toggle('light');
